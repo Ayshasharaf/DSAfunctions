@@ -23,7 +23,13 @@ public class ArrayUtils {
         System.out.println("5. Find Sum");
         System.out.println("6. Find Occurrence");
         System.out.println("7. Check Order");
-        System.out.println("8. Exit");
+        System.out.println("8. Check Palindrome");
+        System.out.println("9. Linear Search");
+        System.out.println("10. Binary Search");
+        System.out.println("11. Bubble Sort");
+        System.out.println("12. Two Sum");
+        System.out.println("13. Exit");
+
 
 
         int choice = sc.nextInt();
@@ -60,8 +66,33 @@ public class ArrayUtils {
             case 7:
                 System.out.println("Order: " + Functions.checkOrder(arr));
                 break;
-
             case 8:
+                System.out.println("Palindrome: " + Functions.isPalindrom(arr));
+                break;      
+
+            case 9:
+                System.out.println("Enter the target element:");
+                int target1 = sc.nextInt();
+                System.out.println("Index: " + Functions.linearSearch(arr, target1));
+                break;
+
+            case 10:
+                System.out.println("Enter the target element:");
+                target1 = sc.nextInt();
+                System.out.println("Index: " + Functions.binarySearch(arr, target1));
+                break;
+            case 11:
+                Functions.bubbleSort(arr);
+                System.out.println("Sorted: " + arr);
+                break;      
+
+            case 12:
+                System.out.println("Enter the target element:");
+                int target2 = sc.nextInt();
+                System.out.println( "two sums :" + Functions.twoSum(arr, target2));
+                break;
+
+            case 13:
                 System.out.println("Exiting...");
                 sc.close();
                 return;

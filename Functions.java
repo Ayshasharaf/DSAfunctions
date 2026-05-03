@@ -103,6 +103,62 @@ public class Functions {
             return "Unordered";
         }
     }
-    
+    public static ArrayList<Integer> bubbleSort(ArrayList<Integer> arr){
+        for(int i=0; i< arr.size()-1;i++){
+            for(int j=0; j< arr.size()-i-1;j++){
+                if(arr.get(j)> arr.get(j+1)){
+                    int temp= arr.get(j);
+                    arr.set(j,arr.get(j+1));
+                    arr.set(j+1,temp);
 
-}
+                }
+            }
+        }
+        return arr;
+
+        
+    }
+    public static int linearSearch(ArrayList<Integer> arr, int target){
+        for(int i =0 ; i < arr.size();i++){
+            if(arr.get(i)==target){
+                return i;
+            }
+        }
+        return -1;
+    }
+    public static int binarySearch(ArrayList<Integer> arr,int target){
+        int left=0;
+        int right = arr.size()-1;
+        while(left<=right){
+            int mid= (left + right)/2;
+            if(arr.get(mid)==target){
+                return mid;
+            }
+            else if(arr.get(mid)<target){
+                left=mid+1;
+            }
+            else{
+                right=mid-1;        
+            }
+            }
+        return -1;
+    }
+    public static ArrayList<Integer> twoSum(ArrayList<Integer> arr, int target){
+        HashMap<Integer, Integer> map= new HashMap<>();
+        for (int i =0 ; i<arr.size();i++){
+            int complement =  target -  arr.get(i);
+            if(map.containsKey(complement)){
+                return new ArrayList<Integer>(Arrays.asList(map.get(complement), i));
+            }
+            map.put(arr.get(i), i);
+        }
+        return new ArrayList<Integer>(Arrays.asList(-1, -1));
+
+   }  
+ }
+
+
+
+
+
+
